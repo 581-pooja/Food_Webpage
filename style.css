@@ -1,0 +1,203 @@
+:root{
+    --color-white:#f3f3f3;
+    --color-darkblue:#1b1b32;
+    --color-darkblue-alpha:rgba(27,27,50,0.8);
+    --color-green:#37af65;
+}
+
+/* Root helps to define colors by a nickname and it is easy to use */
+
+*,*::before,*::after{
+    box-sizing: border-box;
+}
+/* It Defines Box-sizing to whole HTML code or Page 
+Box-sizing is if 3 box with 33.33% then 3 box will also adjust acordingto box */
+
+body{
+    font-family:'Poppins', Times, serif;
+    font-size: 16px;
+    font-weight: 400; 
+    /* Font-weight: Font Thickness */
+    line-height: 1.4;
+    /* Line-height is the height between lines of the row/Forms */
+    color: var(--color-white);
+    margin: 0;
+    /* Margin 0 is also good since it will calculated 25% 50% 25% */
+}
+
+/* mobile friendly alternative to using background-attachment: fixed */
+body::before {
+  content: '';
+  position: fixed;
+  /* Position is Fixed since convinent for mobiles */
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  /* Z-index helps to overlap image then transparent background of purple color */
+  background: var(--color-darkblue);
+  /* Deg is degree : background-image: linear gradient image_url iamge_properties */
+  background-image: 
+  linear-gradient(
+      115deg,
+      rgba(58, 58, 158, 0.8),
+      rgba(136, 136, 206, 0.7)
+    ),
+  url(https://cdn.freecodecamp.org/testable-projects-fcc/images/survey-form-background.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* Linear gradient it takes 2 or 3 colors and mix them to make beautiful page using transition or alpha value */
+  /* Cover Image will cover the whole screen & picture will not split or look pixeled
+   and no repeat will not repeat picture */
+}
+
+h1{
+    /* font-family: Times New Roman; */
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+/* 1rem = 16px but it is prefer to use rem since browser to browser default ,
+inherit values may differ therefore good practise to use rem as unit */
+p{
+    font-size: 1.125rem;
+}
+
+h1,p{
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+label{
+    display:flex;
+    align-items: center;
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+}
+
+input,
+button,
+select,
+textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  /* inherit simpliy means that it will inherit the features from parent  */
+}
+
+button{
+  border: none;
+}
+
+.container{
+  width: 100%;
+  margin: 3.125rem auto 0 auto;
+}
+
+@media (min-width: 576px){
+  .container{
+    max-width: 540px;
+  }
+}
+
+@media (min-width:768px){
+  .container{
+    max-width: 720px;
+  }
+}
+
+.header{
+  padding: 0 0.625rem;
+  margin-bottom: 1.875rem;
+}
+
+.description {
+  font-style: italic;
+  font-weight: 200;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+  /* text-shadow will give shadow to text and 0.4 is blur effect and how many distance it will be away */
+}
+
+.clue {
+  margin-left: 0.25rem;
+  font-size: 0.9rem;
+  color: #e4e4e4;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Form: */
+form {
+  background: var(--color-darkblue-alpha);
+  padding: 2.5rem 0.625rem;
+  border-radius: 0.25rem;
+  /* It makes rectangle sharp corner to round and if square used then it makes round in shape */
+}
+
+@media(min-width: 480px){
+  form{
+    padding: 2.5rem;
+  }
+}
+
+.form-group {
+  margin: 0 auto 1.25rem auto;
+  /* margin: top left bottom right */
+  padding: 0.25rem;
+  /* Padding : Provides breathing space to the html element */
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  height: 2.375rem;
+  padding: 0.375rem 0.75rem;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  /* background-clip: padding-box, the clipping region is the padding-box, meaning
+   that the background is only displayed within the padding-box limit */
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+/* Transition is bit related to animation */
+}
+
+
+.form-control:focus {
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  /* Focus means while clicking on the form */
+}
+
+.input-radio,
+.input-checkbox{
+  display: inline-block;
+  margin-right: 00.625rem;
+  min-height: 1.25rem;
+  width: 1.25rem;
+}
+
+
+.input-textarea {
+  min-height: 120px;
+  width: 100%;
+  padding: 0.625rem;
+  resize: vertical;
+}
+
+.submit-button {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  background: var(--color-green);
+  color: inherit;
+  border-radius: 2px;
+  cursor: pointer;
+}
